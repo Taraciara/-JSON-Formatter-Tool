@@ -1,0 +1,13 @@
+# json_formatter.py
+
+import json
+
+def format_json(file_path, output_path):
+    with open(file_path, "r") as file:
+        data = json.load(file)
+    with open(output_path, "w") as file:
+        json.dump(data, file, indent=4)
+    print(f"Formatted JSON saved to {output_path}")
+
+# Sample usage
+format_json("input.json", "output.json")
